@@ -69,6 +69,10 @@ const [user,setuser]=useState("")
           </p>
         </div>
       </div>
+      <div className="border border-danger mt-1 text-danger text-center" style={{ fontFamily: "IBM Plex Sans",
+                fontSize: "22px",
+                fontStyle: "normal",
+                fontWeight: 600,}}>Note: <span className="text-success">Aatar is not changing because the avatar fetched by the Api is incorrect. Please check ! </span></div>
       <Container className="mt-4">
         <div className="d-flex flex-direction-col  ">
           <Container
@@ -162,7 +166,7 @@ const [user,setuser]=useState("")
                 <div  className="d-flex flex-column  mt-1 " style={{height:"40"}}>
                   <div className=" d-flex flex-column align-items-center">
                    
-                    <img src={images} className="mt-1" style={{height:"100%",width:"40%"}}/>
+                    <img src={images} className="mt-1" style={{height:"100%",width:"35%"}}/>
                     <span className="m-2" style={{fontFamily: "IBM Plex Sans",
                 fontSize: "28px",
                 fontStyle: "normal",
@@ -178,11 +182,11 @@ const [user,setuser]=useState("")
                 fontWeight: 600, marginTop:0,color:"gray"}}>Joined :{joinedDate} { joinedTime}</span>
                   </div>
 
-                  <div className="mt-1">
+                  <div className="mt-1 border border-primary mx-5 rounded">
                   <div className="d-flex flex-row justify-content-between" style={{width:"80%",margin:'0px auto',fontFamily: "IBM Plex Sans",
                 fontSize: "20px",
                 fontStyle: "normal",}}> 
-                      <p>Id : {user.id}</p>
+                      <p>Id : <span></span></p>
                       <p>User Name : {user.profile.username}</p>
                     </div>
                     <div className="d-flex flex-row justify-content-between"  style={{width:"80%",margin:'0px auto',fontFamily: "IBM Plex Sans",
@@ -192,7 +196,7 @@ const [user,setuser]=useState("")
                       <p style={{marginRight:"0px"}}>Last Name : {user.profile.lastName}</p>
                     </div>
                   </div>
-                  <div className=" ">
+                  <div className="mt-2 border mx-2 ">
                     <p style={{width:"80%",margin:'0px auto',fontFamily: "IBM Plex Sans",
                 fontSize: "20px",
                 fontStyle: "normal",}}>Email : {user.profile.email}</p>
