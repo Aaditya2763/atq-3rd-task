@@ -186,7 +186,7 @@ const [user,setuser]=useState("")
                   <div className="d-flex flex-row justify-content-between" style={{width:"80%",margin:'0px auto',fontFamily: "IBM Plex Sans",
                 fontSize: "20px",
                 fontStyle: "normal",}}> 
-                      <p>Id : <span></span></p>
+                      <p>Id : {user.id}</p>
                       <p>User Name : {user.profile.username}</p>
                     </div>
                     <div className="d-flex flex-row justify-content-between"  style={{width:"80%",margin:'0px auto',fontFamily: "IBM Plex Sans",
