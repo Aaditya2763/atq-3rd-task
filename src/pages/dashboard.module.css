@@ -1,0 +1,15 @@
+.image {
+  width: 100vw;
+  align-self: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.60) 100%);
+min-width: 700px;
+    filter: brightness(0.50)
+  }
+  .container{
+    position: absolute;
+  float: center;
+    width: 100%;
+    border:5px solid red;
+     
+  }
+ 
