@@ -17,19 +17,22 @@ min-width: 700px;
   .userContainer{
     border-radius: 10px;
     padding: 0px;
+    overflow-x: hidden;
     margin-bottom: 10px;
     border-radius: 10px;
   }
   .userContainer::-webkit-scrollbar {
-    width: 5px; /* Adjust the width as needed */
+    width: 8px; /* Adjust the width as needed */
     height: 5px; 
     scrollbar-width: thin; /* Firefox */
     scrollbar-color: #888 #ddd;
+   
     /* ms-overflow-style: none; */
 
   }
   .userContainer::-webkit-scrollbar-thumb{
     background-color:  #6c61e1; 
+    border-radius: 10px;
   }
   .userContainer::-webkit-scrollbar-track{
     background-color: #ddd; 
@@ -41,11 +44,13 @@ min-width: 700px;
   height: 400px;
  align-items: center;
   margin: 100px auto;
+  overflow: hidden;
 }
   .userDetailsContainer{
    height: 750px;
     padding: 0px;
     overflow-y: hidden;
+    overflow-x: hidden;
     margin-left: 40px;
     margin-bottom: 10px;
   border:1px solid rgb(233, 228, 228);
