@@ -6,17 +6,33 @@ import { Container } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner';
 import { FaRegUser } from "react-icons/fa";
 const Dashboard = ({ data }) => {
-
+const[usersData,setUsersData]=useState(data)
 const [loading,setloading]=useState(false)
 const [error,seterror]=useState(false)
 const [userId,setuserId]=useState("")
 const [user,setuser]=useState("")
-
+const[message,setmessage]=useState("")
 const [selectedUserId, setSelectedUserId] = useState(null);
 
-const userDeleteHandler = (id) => {
-  console.log(id);
+const userDeleteHandler=(id)=>{
+  console.log(id)
+
+const remainingUsers=data.filter((data)=>data.id!==id);
+console.log(remainingUsers)
+setuser("")
+setmessage("User deleted successfully")
+setUsersData(remainingUsers);
+
 }
+
+useEffect(() => {
+  const timerId = setTimeout(() => {
+    setmessage("");
+  }, 1000);
+
+  // Clear the timer when the component unmounts or when the data changes
+  return () => clearTimeout(timerId);
+});
 
   const userHandler=async(id)=>{
     try {
@@ -55,7 +71,7 @@ const userDeleteHandler = (id) => {
         <div className="d-flex flex-direction-col  ">
           <Container
             className={classes.userContainer}
-            style={{ width: "50%", height:"630px",marginBottom:10,borderBottom:"1px solid lightgray" }}
+            style={{ width: "50%", height:"630px",borderBottom:"1px solid lightgray" }}
           >
             <h2
               className="text-center p-2"
@@ -73,7 +89,9 @@ const userDeleteHandler = (id) => {
             >
               User dashboard
             </h2>
-            {data.map((user,index) => {
+            {message && (            <div className="text-center border border-danger text-light  " style={{height:30,marginTop:-8,background:"#fd5c63"}}>User deleted successfully</div>
+)}
+            {usersData.map((user,index) => {
               return (
                 <div key={index}  className="d-flex flex-direction-row justify-content-between border mt-0 " style={{height:"40", backgroundColor: selectedUserId === user.id ? '#CCCCFF' : 'white',}} onClick={()=>{
                   userHandler(user.id)
