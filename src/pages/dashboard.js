@@ -78,7 +78,7 @@ const [selectedUserId, setSelectedUserId] = useState(null);
       <marquee direction="left" className=" container-fluid  mt-1 text-danger text-center" style={{ fontFamily: "IBM Plex Sans",
                 fontSize: "22px",
                 fontStyle: "normal",
-                fontWeight: 600,}}>Note: <span className="text-success">Aatar of some users are not changing because the avatar fetched by the Api is incorrect. Please check ! </span></marquee>
+                fontWeight: 600,}}>Note: <span className="text-success">Avatar of some users are not changing because the avatar fetched by the Api is incorrect. Please check ! </span></marquee>
       <Container className="mt-3 ">
         <div className="d-flex flex-direction-col  ">
           <Container
