@@ -30,8 +30,7 @@ function App() {
       const response = await axios.get(
         "https://602e7c2c4410730017c50b9d.mockapi.io/users"
       );
-      console.log(response.data);
-    
+ 
       setdata(response.data);
      setloading(false)
      sethasError(false)

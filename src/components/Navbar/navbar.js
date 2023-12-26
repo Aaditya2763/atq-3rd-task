@@ -185,8 +185,8 @@ const NavbarBox = ({loginuserHandler,user}) => {
   }, [message,loggedIn]);
 
   return (
-    <Navbar>
-      <Container>
+    <Navbar className="fixed">
+      <Container className="border-bottom">
         <Navbar.Brand href="#home">
           <img
             src="/assets/logo.svg"

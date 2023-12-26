@@ -14,6 +14,10 @@ const [user,setuser]=useState("")
 
 const [selectedUserId, setSelectedUserId] = useState(null);
 
+const userDeleteHandler = (id) => {
+  console.log(id);
+}
+
   const userHandler=async(id)=>{
     try {
       setSelectedUserId(id);
@@ -21,7 +25,7 @@ const [selectedUserId, setSelectedUserId] = useState(null);
       const userData = data.find((user) => user.id === id);
     if (userData) {
       setuserId(id);
-      console.log(userData)
+     
       setuser(userData);
       seterror(false)
       setloading(false)
@@ -42,39 +46,7 @@ const [selectedUserId, setSelectedUserId] = useState(null);
   
   return (
     <div   style={{ overflow: "hidden" }} >
-      <div className="d-flex flex-column">
-        <img
-          src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNvY2lhbHxlbnwwfHwwfHx8MA%3D%3D"
-          className={classes.image}
-          alt="img"
-        
-        />
-        <div style={{ position: "absolute", top: "30%", left: "10%" }}>
-          <h3
-            style={{
-              color: "white",
-              fontFamily: "IBM Plex Sans",
-              fontSize: "36px",
-              fontStyle: "normal",
-              fontWeight: 700,
-            }}
-          >
-          
-          </h3>
-          <p
-            style={{
-              color: "white",
-              fontFamily: "IBM Plex Sans",
-              fontSize: "18px",
-              fontStyle: "normal",
-              fontWeight: 400,
-              marginTop: -10,
-            }}
-          >
-            
-          </p>
-        </div>
-      </div>
+    
       <marquee direction="left" className=" container-fluid  mt-1 text-danger text-center" style={{ fontFamily: "IBM Plex Sans",
                 fontSize: "22px",
                 fontStyle: "normal",
@@ -83,7 +55,7 @@ const [selectedUserId, setSelectedUserId] = useState(null);
         <div className="d-flex flex-direction-col  ">
           <Container
             className={classes.userContainer}
-            style={{ width: "50%", height:"750px", }}
+            style={{ width: "50%", height:"630px",marginBottom:10,borderBottom:"1px solid lightgray" }}
           >
             <h2
               className="text-center p-2"
@@ -101,9 +73,9 @@ const [selectedUserId, setSelectedUserId] = useState(null);
             >
               User dashboard
             </h2>
-            {data.map((user) => {
+            {data.map((user,index) => {
               return (
-                <div key={user.id}  className="d-flex flex-direction-row justify-content-between border mt-0 " style={{height:"40", backgroundColor: selectedUserId === user.id ? '#CCCCFF' : 'white',}} onClick={()=>{
+                <div key={index}  className="d-flex flex-direction-row justify-content-between border mt-0 " style={{height:"40", backgroundColor: selectedUserId === user.id ? '#CCCCFF' : 'white',}} onClick={()=>{
                   userHandler(user.id)
                 }}>
                   <div className="align-items-center">
@@ -172,8 +144,8 @@ const [selectedUserId, setSelectedUserId] = useState(null);
                 <div  className="d-flex flex-column  mt-1 " style={{height:"40"}}>
                   <div className=" d-flex flex-column align-items-center">
                    
-                    <img src={user.avatar} className="mt-1 rounded-circle border" style={{width:"250px",height:"250px", backgroundColor:"#f2f2f2" }}/>
-                    <span className="m-2" style={{fontFamily: "IBM Plex Sans",
+                    <img src={user.avatar} className="mt-1 rounded-circle border" style={{width:"200px",height:"200px", backgroundColor:"#f2f2f2" }}/>
+                    <span className="mt-1" style={{fontFamily: "IBM Plex Sans",
                 fontSize: "28px",
                 fontStyle: "normal",
                 fontWeight: 600,}}>{user.profile.firstName}</span>
@@ -181,14 +153,14 @@ const [selectedUserId, setSelectedUserId] = useState(null);
                 fontSize: "1.5rem",
                 fontStyle: "normal",
                 textAlign:"center",
-                fontWeight: 600, marginTop:-20}}>{user.jobTitle}</span>
+                fontWeight: 600, marginTop:-15}}>{user.jobTitle}</span>
                 <span style={{fontFamily: "IBM Plex Sans",
                 fontSize: "18px",
                 fontStyle: "normal",
                 fontWeight: 600, marginTop:0,color:"gray"}}>Joined :{joinedDate} { joinedTime}</span>
                   </div>
 
-                  <div className="mt-1 border border-primary mx-5 rounded">
+                  <div className=" border border-primary mx-5  rounded">
                   <div className="d-flex flex-row justify-content-between" style={{width:"80%",margin:'0px auto',fontFamily: "IBM Plex Sans",
                 fontSize: "20px",
                 fontStyle: "normal",}}> 
@@ -202,7 +174,7 @@ const [selectedUserId, setSelectedUserId] = useState(null);
                       <p style={{width:"100%",float:"left"}}><span style={{color:"gray"}}>Last Name :</span> {user.profile.lastName}</p>
                     </div>
                   </div>
-                  <div className="mt-4 border  rounded mx-2 ">
+                  <div className="mt-1  mx-2 ">
                     <p style={{width:"80%",margin:'0px auto',fontFamily: "IBM Plex Sans",
                 fontSize: "20px",
                 fontStyle: "normal",}}><span style={{color:"gray"}}>Email :</span><a >{user.profile.email}</a></p>
@@ -215,8 +187,10 @@ const [selectedUserId, setSelectedUserId] = useState(null);
                 target="_blank" style={{textDecoration:""}}>{user.avatar}</a></p>
 
                   </div>
-                  <Button variant="outline-danger " className="m-2 mt-5" 
-                 >Delete User</Button>
+                  <Button variant="outline-danger " className="mx-2 mt-1" 
+                  onClick={()=>{
+                    userDeleteHandler(user.id);
+                  }}>Delete User</Button>
                 </div>
         
           
