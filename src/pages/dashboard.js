@@ -69,7 +69,7 @@ useEffect(() => {
       <marquee direction="left" className=" container-fluid   text-danger text-center" style={{ fontFamily: "IBM Plex Sans",
                 fontSize: "22px",
                 fontStyle: "normal",
-                fontWeight: 600,}}>Note: <span className="text-success">Avatar of some users are not not visible because the avatar's link fetched by the Api is incorrect/not found. Please check ! Scroll down users list to see other users avatar. </span></marquee>
+                fontWeight: 600,}}>Note: <span className="text-success">Avatar of some users are not not visible because the avatar's link fetched by the Api is incorrect/not found. Please check ! Scroll down users list to see other user's avatar. </span></marquee>
       <Container className="mt-2 ">
         <div className="d-flex flex-direction-col  ">
           <Container
