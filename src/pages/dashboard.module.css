@@ -16,8 +16,10 @@ min-width: 700px;
   }
   .userContainer{
     border-radius: 10px;
+    
     padding: 0px;
     overflow-x: hidden;
+    border:1px solid rgb(215, 214, 214);
     margin-bottom: 10px;
     border-radius: 10px;
   }
@@ -26,7 +28,7 @@ min-width: 700px;
     height: 5px; 
     scrollbar-width: thin; /* Firefox */
     scrollbar-color: #888 #ddd;
-   
+
     /* ms-overflow-style: none; */
 
   }
@@ -41,7 +43,7 @@ min-width: 700px;
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 400px;
+  height: 350px;
  align-items: center;
   margin: 100px auto;
   overflow: hidden;
@@ -49,8 +51,8 @@ min-width: 700px;
   .userDetailsContainer{
    height: 630px;
     padding: 0px;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-x:hidden;
     margin-left: 40px;
     margin-bottom: 10px;
   border:1px solid rgb(233, 228, 228);
