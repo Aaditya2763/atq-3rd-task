@@ -48,6 +48,15 @@ min-width: 700px;
   margin: 100px auto;
   overflow: hidden;
 }
+.user{
+  color: black;
+}  
+
+.user:hover{
+  color:#8a8aed ;
+  cursor: pointer;
+}
+
   .userDetailsContainer{
    height: 630px;
     padding: 0px;

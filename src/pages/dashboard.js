@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import classes from "./dashboard.module.css";
-import images from "../../src/assets/dummy.svg"
+
 import { Container } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner';
 import { FaRegUser } from "react-icons/fa";
@@ -93,7 +93,7 @@ useEffect(() => {
             >
               Users List
             </h2>
-            {message && (<div className="text-center border border-danger text-light  " style={{height:30,marginTop:-8,background:"#fd5c63"}}>User deleted successfully</div>
+            {message && (<div className="text-center border border-danger text-light  " style={{height:30,marginTop:0,background:"#fd5c63"}}>User deleted successfully</div>
 )}
             {usersData.map((user,index) => {
               return (
@@ -102,14 +102,14 @@ useEffect(() => {
                 }}>
                   <div className="d-flex flex-row align-items-center"  >
                     
-                    <img src={user.avatar} className="mt-1 mx-1 mb-1 rounded-circle border" style={{width:"70px",height:"70px"}} />
+                    <img src={user.avatar} className="mt-1 mx-1 mb-1 rounded-circle border" style={{width:"70px",height:"70px",cursor:"pointer"}} />
                  <div  >
-                 <div className="" style={{fontFamily: "IBM Plex Sans",
+                 <div className={classes.user}  style={{fontFamily: "IBM Plex Sans",
                 fontSize: "16px",
               
                 fontStyle: "normal",
                 fontWeight: 400,}}>{user.profile.firstName}</div>
-                   <div className="" style={{fontFamily: "IBM Plex Sans",
+                   <div  style={{fontFamily: "IBM Plex Sans",
                 fontSize: "14px",
               color:"#6D747A",
                 fontStyle: "normal",
